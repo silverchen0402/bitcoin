@@ -22,6 +22,7 @@ class CScript;
 namespace Consensus { struct Params; };
 
 static const bool DEFAULT_PRINTPRIORITY = false;
+void getGenesisBlock(CBlock *pblock);
 
 struct CBlockTemplate
 {
