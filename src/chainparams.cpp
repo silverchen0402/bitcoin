@@ -40,7 +40,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
  * transaction cannot be spent since it did not originally exist in the
  * database.
  *
- * CBlock(hash=000000000019d6, ver=1, hashPrevBlock=00000000000000, hashMerkleRoot=4a5e1e, nTime=1231006505, nBits=1d00ffff, nNonce=2083236893, vtx=1)
+ * CBlock(hash=000000000019d6, ver=1, hashPrevBlock=00000000000000, hashMerkleRoot=4a5e1e, nTime=1296688602, nBits=1d00ffff, nNonce=2083236893, vtx=1)
  *   CTransaction(hash=4a5e1e, ver=1, vin.size=1, vout.size=1, nLockTime=0)
  *     CTxIn(COutPoint(000000, -1), coinbase 04ffff001d0104455468652054696d65732030332f4a616e2f32303039204368616e63656c6c6f72206f6e206272696e6b206f66207365636f6e64206261696c6f757420666f722062616e6b73)
  *     CTxOut(nValue=50.00000000, scriptPubKey=0x5F1DF16B2B704C8A578D0B)
@@ -148,12 +148,14 @@ public:
         //vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
         vFixedSeeds.clear();
         vSeeds.clear();
+
         fDefaultConsistencyChecks = false;
         fRequireStandard = true;
         fMineBlocksOnDemand = false;
-        /*
+
         checkpointData = {
             {
+                /*
                 { 11111, uint256S("0x0000000069e244f73d78e8fd29ba2fd2ed618bd6fa2ee92559f542fdb26e7c1d")},
                 { 33333, uint256S("0x000000002dd5588a74784eaa7ab0507a18ad16a236e7b1ce69f00d7ddfb5d0a6")},
                 { 74000, uint256S("0x0000000000573993a3c9e41ce34471c079dcf5f52a0e824a81e7f953b8661a20")},
@@ -167,19 +169,17 @@ public:
                 {250000, uint256S("0x000000000000003887df1f29024b06fc2200b55f8af8f35453d7be294df2d214")},
                 {279000, uint256S("0x0000000000000001ae8c72a0b0c301f67e3afca10e819efa9041e458e9bd7e40")},
                 {295000, uint256S("0x00000000000000004d9b4ef50f0f9d686fd69db2e03af35a100370c64632a983")},
+                */
+               {0, uint256S("0x43df8cb3c977d29e5a746dbe220ba53f5e70eae834a122e1a13bb643d0bf0c0a")},
             }
         };
-        */
-       checkpointData = {{
-           {0,uint256S("0x43df8cb3c977d29e5a746dbe220ba53f5e70eae834a122e1a13bb643d0bf0c0a")}
-           ,}};
+
         chainTxData = ChainTxData{
             // Data from rpc: getchaintxstats 4096 0000000000000000002e63058c023a9a1de233554f28c7b21380b6c9003f36a8
             /* nTime    */ 0,
             /* nTxCount */ 0,
             /* dTxRate  */ 0
         };
-        
 
         /* disable fallback fee on mainnet */
         m_fallback_fee_enabled = false;
@@ -254,7 +254,9 @@ public:
 
         bech32_hrp = "tb";
 
-        vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_test, pnSeed6_test + ARRAYLEN(pnSeed6_test));
+        //vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_test, pnSeed6_test + ARRAYLEN(pnSeed6_test));
+        vFixedSeeds.clear();
+        vSeeds.clear();
 
         fDefaultConsistencyChecks = false;
         fRequireStandard = false;
@@ -263,7 +265,10 @@ public:
 
         checkpointData = {
             {
-                {0, uint256S("0x43df8cb3c977d29e5a746dbe220ba53f5e70eae834a122e1a13bb643d0bf0c0a")},
+                /*
+                {546, uint256S("000000002a936ca763904c3c35fce2f3556c559c0214345d31b1bcebf76acb70")},
+                */
+               {0, uint256S("0x43df8cb3c977d29e5a746dbe220ba53f5e70eae834a122e1a13bb643d0bf0c0a")},
             }
         };
 
@@ -336,7 +341,10 @@ public:
 
         checkpointData = {
             {
-                {0, uint256S("0x212f38bb71a448c33f3486b0274870d69b671ef0e042ff3d18a37f0d2c047310")},
+                /*
+                {0, uint256S("0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206")},
+                */
+               {0, uint256S("0x43df8cb3c977d29e5a746dbe220ba53f5e70eae834a122e1a13bb643d0bf0c0a")},
             }
         };
 
