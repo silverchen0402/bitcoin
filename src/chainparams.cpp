@@ -112,10 +112,10 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 32-bit integer with any alignment.
          */
-        pchMessageStart[0] = 0xf9;
-        pchMessageStart[1] = 0xbe;
-        pchMessageStart[2] = 0xb4;
-        pchMessageStart[3] = 0xd9;
+        pchMessageStart[0] = 0xe9;
+        pchMessageStart[1] = 0xce;
+        pchMessageStart[2] = 0xe4;
+        pchMessageStart[3] = 0xf9;
         nDefaultPort = 8333;
         nPruneAfterHeight = 100000;
 
@@ -137,7 +137,7 @@ public:
         //vSeeds.emplace_back("seed.btc.petertodd.org"); // Peter Todd, only supports x1, x5, x9, and xd
         //vSeeds.emplace_back("seed.bitcoin.sprovoost.nl"); // Sjors Provoost
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,0);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,28);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,128);
         base58Prefixes[EXT_PUBLIC_KEY] = {0x04, 0x88, 0xB2, 0x1E};
@@ -145,9 +145,9 @@ public:
 
         bech32_hrp = "bc";
 
-        //vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
-        vFixedSeeds.clear();
-        vSeeds.clear();
+        vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_main, pnSeed6_main + ARRAYLEN(pnSeed6_main));
+        //vFixedSeeds.clear();
+        //vSeeds.clear();
 
         fDefaultConsistencyChecks = false;
         fRequireStandard = true;
@@ -238,8 +238,8 @@ public:
         assert(consensus.hashGenesisBlock == uint256S("0x43df8cb3c977d29e5a746dbe220ba53f5e70eae834a122e1a13bb643d0bf0c0a"));
         assert(genesis.hashMerkleRoot == uint256S("0x8bef79f693c587a08208dfd7cfc73d3fddd2f37553d5c06f1a917876df6482aa"));
 
-        vFixedSeeds.clear();
-        vSeeds.clear();
+        //vFixedSeeds.clear();
+        //vSeeds.clear();
         // nodes with support for servicebits filtering should be at the top
         //vSeeds.emplace_back("testnet-seed.bitcoin.jonasschnelli.ch");
         //vSeeds.emplace_back("seed.tbtc.petertodd.org");
@@ -254,9 +254,9 @@ public:
 
         bech32_hrp = "tb";
 
-        //vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_test, pnSeed6_test + ARRAYLEN(pnSeed6_test));
-        vFixedSeeds.clear();
-        vSeeds.clear();
+        vFixedSeeds = std::vector<SeedSpec6>(pnSeed6_test, pnSeed6_test + ARRAYLEN(pnSeed6_test));
+        //vFixedSeeds.clear();
+        //vSeeds.clear();
 
         fDefaultConsistencyChecks = false;
         fRequireStandard = false;
