@@ -1289,7 +1289,7 @@ static SeedSpec6 pnSeed6_test[] = {
     {{0xfd,0x87,0xd8,0x7e,0xeb,0x43,0xa0,0x60,0x9e,0x46,0x54,0xdb,0x61,0x3b,0xb2,0x6f}, 18333}
 };
 */
-static SeedSpec6 pnSeed6_main[] = {};
-static SeedSpec6 pnSeed6_test[] = {};
+static SeedSpec6 pnSeed6_main[] = {{{},}};
+static SeedSpec6 pnSeed6_test[] = {{{},}};
 
 #endif // BITCOIN_CHAINPARAMSSEEDS_H
