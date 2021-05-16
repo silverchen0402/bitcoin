@@ -84,7 +84,7 @@ public:
         consensus.nPowTargetTimespan = 14 * 24 * 60 * 60; // two weeks
         consensus.nPowTargetSpacing = 10 * 60;
         consensus.fPowAllowMinDifficultyBlocks = false;
-        consensus.fPowNoRetargeting = true;
+        consensus.fPowNoRetargeting = false;
         consensus.nRuleChangeActivationThreshold = 574; // 95% of 2016
         consensus.nMinerConfirmationWindow = 576; // nPowTargetTimespan / nPowTargetSpacing
         consensus.vDeployments[Consensus::DEPLOYMENT_TESTDUMMY].bit = 28;
@@ -119,9 +119,9 @@ public:
         nDefaultPort = 6333;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1621125942, 2514950388, 0x1d00ffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1621123014, 2979291255, 0x1d00ffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x00000000e96c2eabde67090080d74c7ea5fff452a230859b91928173ac9fd4e7"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00000000a130eae3fb947b96d133ca385bd2bf35958ace6002fd788f5b16c051"));
         assert(genesis.hashMerkleRoot == uint256S("0xf6c0e1f246ac3bc0c33372659eee09b26b982410626f1e3a3d02177fc2a78bab"));
 
         // Note that of those which support the service bits prefix, most only support a subset of
