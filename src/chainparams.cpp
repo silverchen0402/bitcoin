@@ -137,6 +137,8 @@ public:
         //vSeeds.emplace_back("seed.btc.petertodd.org"); // Peter Todd, only supports x1, x5, x9, and xd
         //vSeeds.emplace_back("seed.bitcoin.sprovoost.nl"); // Sjors Provoost
 
+        vSeeds.emplace_back("we25.mybot.tw");
+
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,28);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,128);
@@ -245,6 +247,7 @@ public:
         //vSeeds.emplace_back("seed.tbtc.petertodd.org");
         //vSeeds.emplace_back("seed.testnet.bitcoin.sprovoost.nl");
         //vSeeds.emplace_back("testnet-seed.bluematt.me"); // Just a static list of stable node(s), only supports x9
+        vSeeds.emplace_back("we25.mybot.tw");
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,111);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,196);
